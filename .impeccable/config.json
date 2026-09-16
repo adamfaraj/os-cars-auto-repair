@@ -1,0 +1,36 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "src/index.html"
+        ],
+        "createdAt": "2026-09-16T20:15:43.933Z",
+        "reason": "Agent: false positive on hero/positioning/cta-band — they use clamp()-based padding (e.g. clamp(2.5rem,6vw,3.5rem)) giving 36-104px of real top/bottom inset, confirmed visually in desktop and mobile screenshots; detector appears unable to resolve clamp() shorthand. The one real instance (marquee ticker's lateral edge) is intentional: a continuous scrolling ticker runs edge-to-edge by design, per the direction contract's marquee-sign motif."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "src/index.html"
+        ],
+        "createdAt": "2026-09-16T20:15:43.955Z",
+        "reason": "Agent: sanctioned exception — direction contract (Vinyl Shop-Sign Marquee, .impeccable/surfaces/src-index-html.md) commits to a scrolling marquee-sign ticker as the page's signature interaction; it is decorative (aria-hidden), respects prefers-reduced-motion, and the full service list is also presented statically and accessibly in the #services section below it."
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/css/styles.css"
+        ],
+        "createdAt": "2026-09-16T20:15:43.969Z",
+        "reason": "Agent: false positive — border-right on .mobile-bar-call is a structural divider between two equal-width sibling buttons in the fixed mobile toolbar (Call | Book Now), not a colored accent strip on a content card; matches the site's recurring thick-black-rule structural language used in the header, service list, and seal badges."
+      }
+    ]
+  }
+}

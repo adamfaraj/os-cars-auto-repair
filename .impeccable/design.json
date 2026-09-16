@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T00:00:00.000Z",
+  "title": "Design System: Os-car's Auto Repair",
+  "extensions": {
+    "colorMeta": {
+      "shop-red": { "role": "primary", "displayName": "Shop Red", "canonical": "#d81722", "tonalRamp": ["#3a0508", "#5c0a0e", "#8a0f14", "#a8121b", "#d81722", "#e8515a", "#f19aa0", "#fbdadd"] },
+      "red-deep": { "role": "primary", "displayName": "Red Deep", "canonical": "#a8121b", "tonalRamp": ["#2a0507", "#440a0d", "#6d0e13", "#8a0f16", "#a8121b", "#c74a52", "#e08a90", "#f5cdd1"] },
+      "red-on-dark": { "role": "primary", "displayName": "Red on Dark", "canonical": "#e8515a", "tonalRamp": ["#3d0b0e", "#611116", "#93181f", "#c1232c", "#e8515a", "#ee7d84", "#f4a8ac", "#fbd6d8"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#121212", "tonalRamp": ["#050505", "#121212", "#242424", "#3a3a3a", "#5c5c5c", "#8a8a8a", "#bdbdbd", "#e8e8e8"] },
+      "paper": { "role": "neutral", "displayName": "Sign Paper", "canonical": "#f7f6f2", "tonalRamp": ["#1c1b19", "#3a3833", "#5c5951", "#847f74", "#b3ac9d", "#d6d1c3", "#efeae0", "#f7f6f2"] },
+      "paper-alt": { "role": "neutral", "displayName": "Paper Alt", "canonical": "#efeae0", "tonalRamp": ["#1a1815", "#39352c", "#5a5546", "#807a65", "#aca485", "#cfc7ac", "#e6dfd1", "#efeae0"] },
+      "kuruma-blue": { "role": "tertiary", "displayName": "KurumaWorks Blue (fixed exception)", "canonical": "#2663eb", "tonalRamp": ["#0a1a42", "#122d70", "#1a41a0", "#1f52c4", "#2663eb", "#5b87f0", "#93aef6", "#cddafb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Bungee Marquee Display", "purpose": "Hero headline, section headings, positioning attribution, CTA line, footer sub-headings. Never body copy or UI labels." },
+      "body": { "displayName": "Archivo Body/UI", "purpose": "All paragraph copy, buttons, nav, form-like UI. Chosen for fast bilingual (EN/ES) legibility." }
+    },
+    "shadows": [
+      { "name": "headline-lift", "value": "0 8px 20px rgba(18, 18, 18, 0.35)", "purpose": "Soft blurred lift under the hero headline, paired with the ink text-stroke outline. Replaces a hard offset shadow rejected in finish review." },
+      { "name": "scroll-shadow", "value": "0 6px 14px rgba(18, 18, 18, 0.18)", "purpose": "Sticky header gains this once the page scrolls past 4px (.is-scrolled)." },
+      { "name": "seal-lift", "value": "0 6px 14px rgba(18, 18, 18, 0.16)", "purpose": "Ambient lift under each trust-band seal badge." }
+    ],
+    "motion": [
+      { "name": "marquee-scroll", "value": "translateX(0) to translateX(-50%), 28s linear infinite", "purpose": "Continuous ticker scroll; disabled under prefers-reduced-motion." },
+      { "name": "button-press", "value": "transform: translateY(1px) on :active", "purpose": "Tactile press feedback on all buttons." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "720px" },
+      { "name": "md", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button — Outline (Primary)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid-ink primary action button used against red or paper fields (e.g. hero Call button).",
+      "html": "<a class=\"ds-btn ds-btn-outline\" href=\"tel:+19196722098\">Call (919) 672-2098</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 8px; border: 3px solid #121212; text-decoration: none; white-space: nowrap; transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.12s ease; } .ds-btn:active { transform: translateY(1px); } .ds-btn-outline { background: #121212; color: #f7f6f2; } .ds-btn-outline:hover { background: #f7f6f2; color: #121212; }"
+    },
+    {
+      "name": "Button — Kuruma (fixed exception)",
+      "kind": "button",
+      "refersTo": "button-kuruma",
+      "description": "The one blue surface in the system: KurumaWorks booking CTA, deliberately foreign to the shop's red/black/white palette.",
+      "html": "<a class=\"ds-btn ds-btn-kuruma\" href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\">Book Now</a>",
+      "css": ".ds-btn-kuruma { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 8px; border: 3px solid #2663eb; background: #2663eb; color: #fff; text-decoration: none; transition: background-color 0.18s ease, color 0.18s ease; } .ds-btn-kuruma:hover { background: #fff; color: #2663eb; border-color: #2663eb; } .ds-btn-kuruma:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Seal Badge",
+      "kind": "custom",
+      "refersTo": "seal-badge",
+      "description": "Circular rubber-stamp trust mark used only for the four confirmed trust facts (NC Inspection, 2-Year Warranty, Import & Domestic, Bilingual).",
+      "html": "<span class=\"ds-seal\"><span class=\"ds-seal-line1\">NC</span><span class=\"ds-seal-line2\">Inspection</span><span class=\"ds-seal-line3\">Station</span></span>",
+      "css": ".ds-seal { width: clamp(120px, 24vw, 160px); height: clamp(120px, 24vw, 160px); padding: 1rem; border-radius: 50%; border: 3px solid #121212; outline: 2px dashed #121212; outline-offset: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.15; background: #f7f6f2; box-shadow: 0 6px 14px rgba(18,18,18,0.16); transform: rotate(-4deg); font-family: 'Archivo', sans-serif; } .ds-seal-line1 { font-size: 0.95rem; color: #d81722; display:block; } .ds-seal-line2 { font-size: 1.05rem; display:block; } .ds-seal-line3 { font-size: 0.85rem; opacity: 0.85; display:block; }"
+    },
+    {
+      "name": "Service List Row",
+      "kind": "custom",
+      "refersTo": "service-list-row",
+      "description": "Menu-board-style list row with a drawn-SVG checkmark badge, never a Unicode glyph.",
+      "html": "<div class=\"ds-service-row\"><svg class=\"ds-service-mark\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.8 4.8L19.5 7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>General Auto Repair</div>",
+      "css": ".ds-service-row { display: flex; align-items: center; gap: 0.9rem; padding: 1rem 0.25rem; border-bottom: 3px solid #121212; font-weight: 700; font-size: 1.05rem; font-family: 'Archivo', sans-serif; color: #121212; } .ds-service-mark { width: 1.6rem; height: 1.6rem; flex-shrink: 0; padding: 0.35rem; border-radius: 50%; background: #d81722; color: #f7f6f2; }"
+    },
+    {
+      "name": "Sticky Header",
+      "kind": "nav",
+      "refersTo": "site-header",
+      "description": "Sticky header, logo left, phone + Kuruma button pinned right, gains a soft shadow once scrolled.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"#\">LOGO</a><div class=\"ds-header-actions\"><a class=\"ds-header-phone\" href=\"tel:+19196722098\">(919) 672-2098</a><a class=\"ds-btn ds-btn-kuruma\" href=\"#\">Book Now</a></div></header>",
+      "css": ".ds-header { position: sticky; top: 0; background: #f7f6f2; border-bottom: 3px solid #121212; display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 1.25rem; transition: box-shadow 0.2s ease; } .ds-header.is-scrolled { box-shadow: 0 6px 14px rgba(18,18,18,0.18); } .ds-header-actions { display: flex; align-items: center; gap: 0.9rem; } .ds-header-phone { font-weight: 800; color: #121212; text-decoration: none; font-variant-numeric: tabular-nums; } .ds-header-phone:hover { color: #d81722; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Vinyl Shop-Sign Marquee",
+    "overview": "The site is built like a hand-painted, bilingual storefront sign, not a corporate auto-shop template: heavy outlined display lettering, a dominant red field, ink-black structural rules, and a crisp sign-white ground. It refuses the soft blue-gradient-with-wrench-icon look every repair-shop site defaults to, in favor of direct, high-contrast, unpretentious signage. Depth is conveyed only as a soft, blurred ambient lift under display type and floating badges, never as a hard, zero-blur offset shadow — that harder device was tried during the build and removed in finish review as a neobrutalist costume the world doesn't wear. The real outline device is the -webkit-text-stroke ink stroke on display headlines, paired with that soft lift underneath. Structure is carried by a recurring thick (3px) solid-ink rule/border, reused across the header, service list, seal badges, mobile bar, and map frame — a genuine signature, not a one-off.",
+    "keyCharacteristics": [
+      "Full-bleed red hero with outlined marquee headline directly on the field, no card wrapper.",
+      "A dominant, page-scale red field (roughly 30-40% of surface across hero/trust-band/CTA), not a rare accent.",
+      "Thick ink-black rule as the one recurring structural device (borders, dividers, ring badges).",
+      "One deliberate palette exception: KurumaWorks blue, confined to .btn-kuruma.",
+      "Outline + soft lift on display type; no hard offset shadows anywhere in the system."
+    ],
+    "rules": [
+      { "name": "The Field, Not Accent Rule", "body": "Shop red is a dominant page-scale field color (hero, trust-band, CTA-band), not a 5-10% accent. Any new section-level background should draw from red / ink / paper, not introduce a fourth field color.", "section": "colors" },
+      { "name": "The One Blue Rule", "body": "KurumaWorks blue appears only on .btn-kuruma and its states. It must never be used for any other button, link, background, or accent.", "section": "colors" },
+      { "name": "The Headlines-Only Rule", "body": "Bungee is used only for hero headline, section headings, the positioning attribution line, footer sub-headings, and the CTA line — never for body copy, buttons, or UI text.", "section": "typography" },
+      { "name": "The Outline-and-Lift Rule", "body": "Display headlines get their sign-painted look from an ink text-stroke plus a soft blurred drop lift — never a hard, zero-blur offset shadow.", "section": "typography" },
+      { "name": "The Soft-Lift-Only Rule", "body": "Where depth is used at all, it is a soft, blurred, ambient lift responding to state or floating placement — never a hard offset/zero-blur shadow.", "section": "elevation" },
+      { "name": "The Thick-Rule Rule", "body": "Structural separation between regions is always a solid 3px ink rule, not a thin hairline or shadow-only separation.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do treat shop red as a field color at section scale (hero, trust-band, CTA-band), not a small accent.",
+      "Do use the 3px solid ink rule as the default structural separator between regions, list rows, and split buttons.",
+      "Do pair any display-type outline effect with a soft blurred lift, never a hard offset shadow.",
+      "Do draw functional icons (checkmarks, phone) as inline SVG paths/symbols, never Unicode glyphs or icon fonts — the marquee's decorative star separator is the one sanctioned exception, and only as a non-functional, aria-hidden ornament inside the marquee itself.",
+      "Do keep .btn-kuruma visually foreign (KurumaWorks blue) to signal the third-party booking step; never restyle it toward the shop's red/black/white system."
+    ],
+    "donts": [
+      "Don't introduce a hard, zero-blur offset shadow anywhere in this system — it was built, reviewed, and explicitly removed from the hero headline as a neobrutalist device this world doesn't wear.",
+      "Don't use KurumaWorks blue (#2663eb) for anything other than .btn-kuruma and its hover state.",
+      "Don't use a pill (fully rounded) button shape; the system's rounding is consistently 8px, not a capsule."
+    ]
+  }
+}
