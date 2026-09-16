@@ -176,7 +176,8 @@ table {
   border-color: var(--ink);
 }
 
-.btn-outline:hover {
+.hero-actions .btn-outline:hover,
+.cta-actions .btn-outline:hover {
   background: var(--paper);
   color: var(--ink);
 }
